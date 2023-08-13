@@ -1,16 +1,33 @@
-.button {
-  background-color: #efefef;
-  border-radius: 15px;
-  width: 50px;
-  height: 40px;
+body {
+  background-color: #73a2fb;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
+  height: 100vh;
+}
+
+.button {
+  background-color: #efefef;
+  border-radius: 15px;
+  width: 70px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
   color: #121212;
   cursor: pointer;
   text-align: center;
   margin-bottom: 5px;
+}
+
+.container {
+  background-color: #414143;
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
 }
 
 .action-btn {
@@ -21,5 +38,6 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   max-width: 300px;
+  gap: 5px;
   margin: 0 auto;
 }
