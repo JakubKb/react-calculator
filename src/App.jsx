@@ -4,6 +4,7 @@ import "./App.css";
 function App() {
   return (
     <div className="container">
+      <Display />
       <Buttons />
     </div>
   );
@@ -30,6 +31,10 @@ function Buttons() {
       <div className="button action-btn">+</div>
     </div>
   );
+}
+
+function Display() {
+  return <div className="display"></div>;
 }
 
 export default App;
