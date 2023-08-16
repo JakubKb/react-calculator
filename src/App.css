@@ -19,6 +19,7 @@ body {
   cursor: pointer;
   text-align: center;
   margin-bottom: 5px;
+  border: none;
 }
 
 .button:hover {
@@ -65,5 +66,11 @@ body {
   text-align: right;
   margin-top: 50px;
   font-size: 30px;
+  margin-right: 10px;
+}
+
+.equals {
+  color: #7e7e7e;
+  font-size: 20px;
   margin-right: 10px;
 }

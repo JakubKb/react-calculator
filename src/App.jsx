@@ -3,41 +3,84 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
+  const [calc, setCalc] = useState("");
+  const [result, setResuly] = useState("");
+
+  const operators = ["/", ".", "+", "*", "-"];
+
+  const updateCalc = (value) => {
+    if (
+      (operators.includes(value) && calc === "") ||
+      (operators.includes(value) && operators.includes(calc.slice(-1)))
+    ) {
+      return;
+    }
+    setCalc(calc + value);
+  };
+
+  const del = () => {
+    if (calc.length === 0) return;
+    setCalc(calc.slice(0, -1));
+  };
   return (
     <div className="container">
-      <Display />
-      <Buttons />
-    </div>
-  );
-}
+      <div className="display">
+        <h3>
+          {result ? <span className="equals">({result})</span> : ""}
 
-function Buttons() {
-  return (
-    <div className="buttons-wrapper">
-      <div className="button">7</div>
-      <div className="button">8</div>
-      <div className="button">9</div>
-      <div className="button action-btn">X</div>
-      <div className="button">4</div>
-      <div className="button">5</div>
-      <div className="button">6</div>
-      <div className="button action-btn">÷</div>
-      <div className="button">1</div>
-      <div className="button">2</div>
-      <div className="button">3</div>
-      <div className="button action-btn">-</div>
-      <div className="button">0</div>
-      <div className="button action-btn">.</div>
-      <div className="button action-btn">=</div>
-      <div className="button action-btn">+</div>
-    </div>
-  );
-}
-
-function Display() {
-  return (
-    <div className="display">
-      <h3>Test Test</h3>
+          {calc || "0"}
+        </h3>
+      </div>
+      <div className="buttons-wrapper">
+        <button className="button" onClick={() => updateCalc("7")}>
+          7
+        </button>
+        <button className="button" onClick={() => updateCalc("8")}>
+          8
+        </button>
+        <button className="button" onClick={() => updateCalc("9")}>
+          9
+        </button>
+        <button className="button action-btn" onClick={() => updateCalc("*")}>
+          *
+        </button>
+        <button className="button" onClick={() => updateCalc("4")}>
+          4
+        </button>
+        <button className="button" onClick={() => updateCalc("5")}>
+          5
+        </button>
+        <button className="button" onClick={() => updateCalc("6")}>
+          6
+        </button>
+        <button className="button action-btn" onClick={() => updateCalc("/")}>
+          /
+        </button>
+        <button className="button" onClick={() => updateCalc("1")}>
+          1
+        </button>
+        <button className="button" onClick={() => updateCalc("2")}>
+          2
+        </button>
+        <button className="button" onClick={() => updateCalc("3")}>
+          3
+        </button>
+        <button className="button action-btn" onClick={() => updateCalc("-")}>
+          -
+        </button>
+        <button className="button" onClick={() => updateCalc("0")}>
+          0
+        </button>
+        <button className="button action-btn" onClick={() => updateCalc(".")}>
+          .
+        </button>
+        <button className="button action-btn" onClick={() => del()}>
+          DEL
+        </button>
+        <button className="button action-btn" onClick={() => updateCalc("+")}>
+          +
+        </button>
+      </div>
     </div>
   );
 }
