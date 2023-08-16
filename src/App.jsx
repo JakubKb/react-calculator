@@ -1,5 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { useState } from "react";
 
 function App() {
   return (
@@ -34,7 +35,11 @@ function Buttons() {
 }
 
 function Display() {
-  return <div className="display"></div>;
+  return (
+    <div className="display">
+      <h3>Test Test</h3>
+    </div>
+  );
 }
 
 export default App;
